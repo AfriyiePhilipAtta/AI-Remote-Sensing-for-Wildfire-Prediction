@@ -1,0 +1,115 @@
+{
+  "csv_path": "upper_west_fire_spread.csv",
+  "grid_resolution": 0.1,
+  "seq_len": 7,
+  "pred_horizon": 7,
+  "n_features": 13,
+  "features": [
+    "ndvi",
+    "nbr",
+    "ndwi",
+    "temp",
+    "relative_humidity",
+    "wind_speed",
+    "wind_dir",
+    "rainfall",
+    "soil_moisture",
+    "slope",
+    "aspect",
+    "elevation",
+    "landcover"
+  ],
+  "grid_shape": [
+    14,
+    16
+  ],
+  "n_dates": 236,
+  "tab_threshold": 0.02,
+  "convlstm_backend": "PyTorch",
+  "device": "cpu",
+  "imbalance_fixes": {
+    "smote_applied": true,
+    "focal_alpha": 0.9,
+    "gb_sample_weight": "inverse class frequency",
+    "rf_class_weight": "balanced",
+    "opt_threshold_method": "max-F1 search",
+    "opt_threshold_ens": 0.365
+  },
+  "temporal_cv": {
+    "n_folds": 5,
+    "gap_sequences": 14,
+    "strategy": "expanding-window, no look-ahead leakage",
+    "folds_completed": 4,
+    "cv_mean_auc_d1": 0.7549,
+    "cv_std_auc_d1": 0.2067,
+    "cv_mean_f1_d1": 0.4603,
+    "cv_std_f1_d1": 0.3141,
+    "cv_mean_ap_d1": 0.3687,
+    "cv_std_ap_d1": 0.366,
+    "ens_mean_auc_d1": 0.835,
+    "ens_std_auc_d1": 0.2096
+  },
+  "convlstm_final_fold": {
+    "hidden": 16,
+    "epochs": 25,
+    "batch": 4,
+    "focal_alpha": 0.9,
+    "final_train_loss": 0.00267,
+    "final_val_loss": 0.00121
+  },
+  "model_auc_final_fold": {
+    "convlstm": 0.8182,
+    "gradient_boost": 0.9545,
+    "random_forest": 1.0,
+    "ensemble": 0.9091
+  },
+  "ensemble_f1_final_fold": 0.5,
+  "date_range": {
+    "start": "2019-11-01",
+    "end": "2023-04-24"
+  },
+  "extent": {
+    "lon_min": -2.9000000000000004,
+    "lon_max": -1.4000000000000001,
+    "lat_min": 9.700000000000001,
+    "lat_max": 11.0
+  },
+  "output_structure": {
+    "01_study_area": [
+      "aoi_overview.png",
+      "fire_density.png",
+      "monthly_calendar.png"
+    ],
+    "02_model_training": [
+      "loss_curves.png",
+      "smote_balance.png"
+    ],
+    "03_model_evaluation": [
+      "roc.png",
+      "pr.png",
+      "calibration.png",
+      "confusion_matrix.png",
+      "horizon_metrics.png"
+    ],
+    "04_spatial_forecast": [
+      "multihorizon_maps.png",
+      "error_maps.png"
+    ],
+    "05_interpretation": [
+      "feature_importance.png",
+      "wind_alignment.png",
+      "weather_vs_spread.png"
+    ],
+    "06_application": [
+      "cumulative_burn.png",
+      "risk_composite.png",
+      "hotspot_ranking.png",
+      "vulnerability_quadrant.png"
+    ],
+    "07_cv_results": [
+      "cv_fold_metrics.png",
+      "cv_horizon_bands.png",
+      "cv_train_sizes.png"
+    ]
+  }
+}
