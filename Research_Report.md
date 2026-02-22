@@ -2,8 +2,8 @@
 ## A Spatiotemporal Deep Learning Approach using ConvLSTM, Gradient Boosting, and Random Forest
 
 **Research Progress Report**
-Prepared for Potential Supervisor Review
-February 2026
+**Prepared for Potential Supervisor Review**
+**February 2026**
 
 ---
 
