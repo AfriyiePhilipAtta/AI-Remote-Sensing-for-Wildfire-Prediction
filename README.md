@@ -1,0 +1,1 @@
+# AI-Remote-Sensing-for-Wildfire-Prediction
