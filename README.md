@@ -7,7 +7,7 @@
 
 A complete end-to-end spatiotemporal machine learning pipeline for predicting wildfire spread up to **seven days ahead** across Upper West Ghana, integrating Sentinel-2, MODIS, and ERA5-Land data with a ConvLSTM ensemble model.
 
-> 📄 **Full Research Report:** [REPORT.md](REPORT.md)
+> 📄 **Full Research Report:** [Research_Report.md](Research_Report.md)
 
 ---
 
