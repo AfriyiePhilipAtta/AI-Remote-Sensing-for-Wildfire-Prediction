@@ -1,15 +1,15 @@
 # Wildfire Spread Prediction in Upper West Ghana
 ## A Spatiotemporal Deep Learning Approach using ConvLSTM, Gradient Boosting, and Random Forest
 
-**Research Progress Report**
-**Prepared for Potential Supervisor Review**
-**February 2026**
+-Research Progress Report
+-Prepared for Potential Supervisor Review
+-February 2026
 
 ---
 
 ## Abstract
 
-Wildfire spread in Upper West Ghana poses a significant and recurring threat to agricultural livelihoods, biodiversity, and community safety, yet operational early warning systems remain absent at the subnational level. This study presents a complete end-to-end machine learning pipeline for predicting wildfire spread up to seven days ahead across Upper West Ghana. The pipeline combines satellite remote sensing data from Sentinel-2 and MODIS with ERA5-Land meteorological reanalysis to drive a spatiotemporal ensemble model comprising a Convolutional LSTM (ConvLSTM) neural network, Gradient Boosting, and Random Forest classifiers. The pipeline was designed with rigorous attention to class imbalance, fire spread events representing 3.65% of observations, and temporal leakage prevention through an expanding window K-Fold cross-validation scheme. Across five temporal cross-validation folds, the ensemble achieved a Day+1 AUC of 0.831 ± 0.160, an F1 score of 0.571 ± 0.288, and an Average Precision of 0.464 ± 0.337. Model performance peaked at the three-day horizon (AUC = 0.865), reflecting the predictive value of persistent environmental conditions. The composite risk index and vulnerability quadrant analysis identified actionable high-risk zones, with 21% of the study domain classified as Very High risk. These results demonstrate the potential of deep learning-based ensemble methods for operational wildfire early warning in data-sparse sub-Saharan African landscapes.
+Wildfire spread in Upper West Ghana poses a significant and recurring threat to agricultural livelihoods, biodiversity, and community safety, yet operational early warning systems remain absent at the subnational level. This study presents a complete end-to-end machine learning pipeline for predicting wildfire spread up to seven days ahead across Upper West Ghana. The pipeline combines satellite remote sensing data from Sentinel-2 and MODIS with ERA5-Land meteorological reanalysis to drive a spatiotemporal ensemble model comprising a Convolutional LSTM (ConvLSTM) neural network, a Gradient Boosting classifier, and a Random Forest classifier. The pipeline was designed with rigorous attention to class imbalance, fire-spread events representing 3.65% of observations, and temporal leakage prevention through an expanding-window K-Fold cross-validation scheme. Across five temporal cross-validation folds, the ensemble achieved a Day+1 AUC of 0.831 ± 0.160, an F1 score of 0.571 ± 0.288, and an Average Precision of 0.464 ± 0.337. Model performance peaked at the three-day horizon (AUC = 0.865), reflecting the predictive value of persistent environmental conditions. The composite risk index and vulnerability quadrant analysis identified actionable high-risk zones, with 21% of the study domain classified as Very High risk. These results demonstrate the potential of deep learning-based ensemble methods for operational wildfire early warning in data-sparse sub-Saharan African landscapes.
 
 ---
 
@@ -50,7 +50,7 @@ Wildfire prediction in sub-Saharan Africa has historically relied on fire weathe
 
 Spatiotemporal deep learning architectures, specifically the Convolutional LSTM (ConvLSTM) introduced by Shi et al. (2015), have demonstrated strong performance in gridded environmental forecasting by simultaneously encoding spatial structure and temporal dynamics. These models are increasingly being applied to fire spread prediction, though applications in West Africa remain rare. Gradient Boosting and Random Forest classifiers have independently proven effective for tabular environmental data, making ensemble combinations of spatial and tabular models a natural extension (Abatzoglou and Williams, 2016).
 
-Class imbalance is a pervasive challenge in fire occurrence modelling. Focal loss, introduced by Lin et al. (2017) for dense object detection, has been adapted successfully to address severe positive class underrepresentation in binary classification settings. Complementary strategies including SMOTE oversampling (Chawla et al., 2002) and class-weighted training further improve minority class recall without sacrificing overall discrimination. Temporal validation design is equally critical: standard random train-test splits in time series data introduce look-ahead leakage, which inflates apparent model skill and renders reported metrics uninterpretable for operational use.
+Class imbalance is a pervasive challenge in fire occurrence modelling. Focal loss, introduced by Lin et al. (2017) for dense object detection, has been adapted successfully to address severe positive class underrepresentation in binary classification settings. Complementary strategies, including SMOTE oversampling (Chawla et al., 2002) and class-weighted training, further improve minority class recall without sacrificing overall discrimination. Temporal validation design is equally critical: standard random train-test splits in time series data introduce look-ahead leakage, which inflates apparent model skill and renders reported metrics uninterpretable for operational use.
 
 ---
 
@@ -61,7 +61,7 @@ Class imbalance is a pervasive challenge in fire occurrence modelling. Focal los
 The study covers Upper West Ghana, bounded approximately 9.7°N to 11.0°N and 2.9°W to 1.4°W, comprising a 14 x 16 grid at 0.1° spatial resolution (approximately 11 km per cell). The region is characterised by Guinea savanna vegetation transitioning to Sudanian savanna in the north, with elevations ranging from 180 to 350 m above sea level and a pronounced dry season from November to April during which fire risk peaks sharply (White, 1983; Dickson and Benneh, 2004).
 
 <p align="center"><img src="images/aoi_overview.png" width="850"/></p>
-<p align="center"><em>Figure 1. Spatial overview of the Upper West Ghana AOI. Top row: mean fire frequency (left) and mean NDVI (right). Bottom row: elevation (left) and mean spread probability (right). Stars mark peak value cells; all panels Gaussian smoothed (σ = 0.5 cells) for display.</em></p>
+<p align="center"><em>Figure 1. Spatial overview of the Upper West Ghana AOI. Top row: mean fire frequency (left) and mean NDVI (right). Bottom row: elevation (left) and mean spread probability (right). Stars mark peak value cells; all panels are Gaussian smoothed (σ = 0.5 cells) for display.</em></p>
 
 ### 3.2 Data Sources and Features
 
