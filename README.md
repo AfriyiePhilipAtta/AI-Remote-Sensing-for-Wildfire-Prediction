@@ -86,7 +86,7 @@ Sentinel-2 + MODIS + ERA5-Land + Terrain
 ## 🗺️ Spatial Forecast
 
 <p align="center">
-  <img src="images/multihorizon_maps.png" width="750" alt="Multi-Horizon Forecast Maps"/>
+  <img src="images/multihorizon_maps.png" width="900" alt="Multi-Horizon Forecast Maps"/>
 </p>
 <p align="center"><em>Multi-horizon fire spread forecast. Top: predicted probability. Middle: observed spread. Bottom: absolute error. Columns = Day+1 through Day+7.</em></p>
 
@@ -95,7 +95,7 @@ Sentinel-2 + MODIS + ERA5-Land + Terrain
 ## 🔬 Feature Importance
 
 <p align="center">
-  <img src="images/feature_importance.png" width="750" alt="Feature Importance"/>
+  <img src="images/feature_importance.png" width="900" alt="Feature Importance"/>
 </p>
 <p align="center"><em>Feature importance across ConvLSTM, Gradient Boosting, and Random Forest. Relative humidity and slope are dominant drivers.</em></p>
 
