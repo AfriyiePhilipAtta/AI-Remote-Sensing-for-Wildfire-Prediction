@@ -28,12 +28,12 @@ A complete end-to-end spatiotemporal machine learning pipeline for predicting wi
 ## 🗺️ Study Area and Fire Activity
 
 <p align="center">
-  <img src="images/aoi_overview.png" width="800"/>
+  <img src="images/aoi_overview.png" width="650" alt="AOI Overview"/>
 </p>
 <p align="center"><em>Spatial overview of Upper West Ghana AOI: mean fire frequency, NDVI, elevation, and spread probability.</em></p>
 
 <p align="center">
-  <img src="images/fire_density.png" width="800"/>
+  <img src="images/fire_density.png" width="650" alt="Fire Density KDE"/>
 </p>
 <p align="center"><em>Kernel Density Estimation of fire occurrence, showing primary hotspot centred around 2.0°W, 10.8°N.</em></p>
 
@@ -72,12 +72,12 @@ Sentinel-2 + MODIS + ERA5-Land + Terrain
 ## 📊 Model Performance
 
 <p align="center">
-  <img src="images/cv_fold_metrics.png" width="800"/>
+  <img src="images/cv_fold_metrics.png" width="650" alt="CV Fold Metrics"/>
 </p>
 <p align="center"><em>Per-fold Day+1 metrics across four completed CV folds. AUC mean = 0.831, F1 mean = 0.571.</em></p>
 
 <p align="center">
-  <img src="images/cv_horizon_bands.png" width="800"/>
+  <img src="images/cv_horizon_bands.png" width="650" alt="CV Horizon Bands"/>
 </p>
 <p align="center"><em>Cross-validated mean ± 1σ performance across forecast horizons Days+1 to +7.</em></p>
 
@@ -86,7 +86,7 @@ Sentinel-2 + MODIS + ERA5-Land + Terrain
 ## 🗺️ Spatial Forecast
 
 <p align="center">
-  <img src="images/multihorizon_maps.png" width="900"/>
+  <img src="images/multihorizon_maps.png" width="750" alt="Multi-Horizon Forecast Maps"/>
 </p>
 <p align="center"><em>Multi-horizon fire spread forecast. Top: predicted probability. Middle: observed spread. Bottom: absolute error. Columns = Day+1 through Day+7.</em></p>
 
@@ -95,7 +95,7 @@ Sentinel-2 + MODIS + ERA5-Land + Terrain
 ## 🔬 Feature Importance
 
 <p align="center">
-  <img src="images/feature_importance.png" width="900"/>
+  <img src="images/feature_importance.png" width="750" alt="Feature Importance"/>
 </p>
 <p align="center"><em>Feature importance across ConvLSTM, Gradient Boosting, and Random Forest. Relative humidity and slope are dominant drivers.</em></p>
 
@@ -104,12 +104,12 @@ Sentinel-2 + MODIS + ERA5-Land + Terrain
 ## 🗺️ Risk Mapping
 
 <p align="center">
-  <img src="images/risk_composite.png" width="800"/>
+  <img src="images/risk_composite.png" width="650" alt="Composite Fire Risk Index"/>
 </p>
 <p align="center"><em>Composite Fire Risk Index. 21% of domain classified as Very High risk, 38% as High risk.</em></p>
 
 <p align="center">
-  <img src="images/vulnerability_quadrant.png" width="800"/>
+  <img src="images/vulnerability_quadrant.png" width="650" alt="Vulnerability Quadrant"/>
 </p>
 <p align="center"><em>Vulnerability quadrant analysis: Exposure vs Sensitivity coloured by composite risk.</em></p>
 
@@ -120,10 +120,8 @@ Sentinel-2 + MODIS + ERA5-Land + Terrain
 ```bash
 git clone https://github.com/afriyieattaphilip/AI-Remote-Sensing-for-Wildfire-Prediction.git
 cd AI-Remote-Sensing-for-Wildfire-Prediction
-
 pip install -r requirements.txt
 earthengine authenticate
-
 python models/pipeline.py --study_area upper_west_ghana --horizons 7
 ```
 
@@ -141,8 +139,11 @@ python models/pipeline.py --study_area upper_west_ghana --horizons 7
 ## 👤 Author
 
 **Philip Atta Afriyie**
+
 Geospatial Machine Learning Engineer | Remote Sensing | Agronomy | Spatiotemporal Modeling
+
 📧 afriyieattaphilip@gmail.com | 📍 Göttingen, Germany
+
 🔗 [LinkedIn](https://linkedin.com) · [GitHub](https://github.com/afriyieattaphilip)
 
 *M.Sc. Sustainable International Agriculture, Georg-August University of Göttingen*
