@@ -1,4 +1,4 @@
-# 🔥 AI-Based Wildfire Spread Prediction — Upper West Ghana
+# 🔥 AI-Based Wildfire Spread Prediction in Upper West Ghana
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Google Earth Engine](https://img.shields.io/badge/Google%20Earth%20Engine-API-green.svg)
